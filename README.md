@@ -13,7 +13,7 @@ For each airdrop that a 9Summits vault is eligible for, we will distribute rewar
 
 The distribution data used for these calculations is displayed in this repository. 
 
-This data is computed using the \[Lagoon repository\]\(https://github.com/hopperlabsxyz/fees-computation-cli\) \(fee-computation-cli\).
+This data is computed using the [fees-computation-cli](https://github.com/hopperlabsxyz/fees-computation-cli).
 
 ## Repository Structure
 
