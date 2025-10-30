@@ -14,10 +14,10 @@ Because of missing data between **Sep-26-2025** and **Oct-7-2025** we interpolat
 
 1. **First Interpolation**:
 
-   - We add a starting point: `1758876527,0`
+   - We add a starting point: `1758876528,0` (+1 to avoid issue with cli)
    - Run command:
      ```bash
-     bun run interpolate raw-fxsp.csv -f 1758876527 -t 1759827683 -o --frequency 3600
+     bun run interpolate raw-fxsp.csv -f 1758876528 -t 1759827683 -o --frequency 3600
      ```
    - Output: `interpolated-fxsp.csv`
 

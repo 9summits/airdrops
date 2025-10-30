@@ -14,10 +14,10 @@ This deposit will be our start date and end date will be the expiry of the pendl
 
 1. **First Interpolation**:
 
-   - We add a starting point: `1758876527,0`
+   - We add a starting point: `1758876528,0` (+1 to avoid issue with cli)
    - Run command:
      ```bash
-     bun run interpolate raw-fxn.csv -f 1758876527 -t 1759827683 -o --frequency 3600 -p 3
+     bun run interpolate raw-fxn.csv -f 1758876528 -t 1759827683 -o --frequency 3600 -p 3
      ```
    - Output: `interpolated-fxn.csv`
 
