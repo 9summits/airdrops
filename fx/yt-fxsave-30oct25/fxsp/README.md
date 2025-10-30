@@ -23,7 +23,7 @@ Because of missing data between **Sep-26-2025** and **Oct-7-2025** we interpolat
 
 ## User earned fxSP
 
-We use the interpolated data as input for user points calculation:
+We use the interpolated data as input for fxsp distribution among users:
 
 ```bash
 bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interpolated-fxsp.csv
