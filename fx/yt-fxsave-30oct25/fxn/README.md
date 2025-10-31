@@ -30,3 +30,5 @@ bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interp
 ```
 
 Final output: `user-fxn-distribution.csv`
+
+The final file contains for each user how many fxn they have earned.

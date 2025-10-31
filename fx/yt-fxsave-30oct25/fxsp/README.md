@@ -12,7 +12,7 @@ Because of missing data between **Sep-26-2025** and **Oct-7-2025** we interpolat
 - Start: `Sep-26-2025 08:48:47 AM UTC` (timestamp: `1758876527`)
 - First known point: `1759827683,5863.39`
 
-1. **First Interpolation**:
+1. **Interpolation**:
 
    - We add a starting point: `1758876528,0` (+1 to avoid issue with cli)
    - Run command:
@@ -30,3 +30,5 @@ bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interp
 ```
 
 Final output: `user-fxsp-distribution.csv`
+
+The final file contains for each user how many fxSP they have earned.
