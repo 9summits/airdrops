@@ -32,3 +32,13 @@ bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interp
 Final output: `user-fxsp-distribution.csv`
 
 The final file contains for each user how many fxSP they have earned.
+
+## Edit of 14 Nov 2025
+
+We identified an issue with the fxSP distribution. The interpolation lead to an imprecision of the fair repartition of fxSP among users.
+
+To fix this, we computed the fxSP amount earned effectively via direct smart contract reads.
+
+We then computed the difference between the expected and actual fxSP amounts in the `diff-distribution.csv` file. 
+
+Users with a negative difference have been credited with the difference amount in the `diff-distribution.csv` file.
