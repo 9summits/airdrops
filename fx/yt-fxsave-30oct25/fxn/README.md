@@ -34,24 +34,24 @@ Final output: `user-fxn-distribution.csv`
 The final file contains for each user how many fxn they have earned.
 
 ## Edit of 14 Nov 2025
-We identiifed that a fairer start date of distribution would not be the first deposit but the time of the first communication on x.com from fx procotol.
+We made a mistake in the selection of the start date of distribution. A fairer start date of distribution would be the timestamp of the first communication about the vault on x.com from fx procotol.
 This date is 1 Oct 2025 at 10:46:00 AM UTC. The timestamp is `1759315607`.
 [X post](https://x.com/protocol_fx/status/1973384091434360975?s=20)
 
-This leads to the a raw-fxn-fix.csv.
+This leads to the a `raw-fxn-fix.csv` file.
 
-We then interpolated the data between the first deposit and the first communication on x.com.
+We interpolate the data.
 ```bash
      bun run interpolate raw-fxn-fix.csv -f 1759315607 -t 1761782400 -o --frequency 3600 -p 3
-     ```
+```
 
-We then use this data to compute the fair distribution of fxn among users.
+Based on this data we compute the fair distribution of fxn among users.
 ```bash
 bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interpolated-fxn-fix.csv
 ```
 
 Final output: `user-fxn-distribution-fix.csv`
 
-The final file contains for each user how many fxn they have earned and the amount of they should have earned.
+The final file contains for each user how many fxn they have earned in the `actual` column and the amount of they should have earned in the `expected` column and the difference in the `diff` column.
 
-We then computed the difference between the expected and actual fxn amounts and airdrop the users who got a negative difference. 
+The users who got a negative difference have been credited with the difference amount.

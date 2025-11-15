@@ -39,6 +39,13 @@ We identified an issue with the fxSP distribution. The interpolation lead to an 
 
 To fix this, we computed the fxSP amount earned effectively via direct smart contract reads and stored it in the `fxsp-fixed.csv` file.
 
-We then computed the difference between the expected and actual fxSP amounts and stored it in the `diff-distribution.csv` file. 
+Based on this data we compute the fair distribution of fxn among users.
+```bash
+bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points fxsp-fixed.csv
+```
 
-Users with a negative difference have been credited with the difference amount.
+Final output: `user-fxsp-distribution-fix.csv`
+
+The final file contains for each user how many fxn they have earned in the `actual` column and the amount of they should have earned in the `expected` column and the difference in the `diff` column.
+
+The users who got a negative difference have been credited with the difference amount.
