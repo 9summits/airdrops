@@ -37,8 +37,8 @@ The final file contains for each user how many fxSP they have earned.
 
 We identified an issue with the fxSP distribution. The interpolation lead to an imprecision of the fair repartition of fxSP among users.
 
-To fix this, we computed the fxSP amount earned effectively via direct smart contract reads.
+To fix this, we computed the fxSP amount earned effectively via direct smart contract reads and stored it in the `fxsp-fixed.csv` file.
 
-We then computed the difference between the expected and actual fxSP amounts in the `diff-distribution.csv` file. 
+We then computed the difference between the expected and actual fxSP amounts and stored it in the `diff-distribution.csv` file. 
 
-Users with a negative difference have been credited with the difference amount in the `diff-distribution.csv` file.
+Users with a negative difference have been credited with the difference amount.
