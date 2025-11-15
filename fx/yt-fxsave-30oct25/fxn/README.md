@@ -17,7 +17,7 @@ This deposit will be our start date and end date will be the expiry of the pendl
    - We add a starting point: `1758876528,0` (+1 to avoid issue with cli)
    - Run command:
      ```bash
-     bun run interpolate raw-fxn.csv -f 1758876528 -t 1759827683 -o --frequency 3600 -p 3
+     bun run interpolate raw-fxn.csv -f 1758876528 -t 1761782400 -o --frequency 3600 -p 3
      ```
    - Output: `interpolated-fxn.csv`
 
@@ -32,3 +32,26 @@ bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interp
 Final output: `user-fxn-distribution.csv`
 
 The final file contains for each user how many fxn they have earned.
+
+## Edit of 14 Nov 2025
+We identiifed that a fairer start date of distribution would not be the first deposit but the time of the first communication on x.com from fx procotol.
+This date is 1 Oct 2025 at 10:46:00 AM UTC. The timestamp is `1759315607`.
+[X post](https://x.com/protocol_fx/status/1973384091434360975?s=20)
+
+This leads to the a raw-fxn-fix.csv.
+
+We then interpolated the data between the first deposit and the first communication on x.com.
+```bash
+     bun run interpolate raw-fxn-fix.csv -f 1759315607 -t 1761782400 -o --frequency 3600 -p 3
+     ```
+
+We then use this data to compute the fair distribution of fxn among users.
+```bash
+bun run user-points 1:0x0d1ea8c0ed10a19b2c714cd7ea923ae4a636ee90 --points interpolated-fxn-fix.csv
+```
+
+Final output: `user-fxn-distribution-fix.csv`
+
+The final file contains for each user how many fxn they have earned and the amount of they should have earned.
+
+We then computed the difference between the expected and actual fxn amounts and airdrop the users who got a negative difference. 
